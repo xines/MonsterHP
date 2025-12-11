@@ -45,14 +45,14 @@ public interface MonsterHPConfig extends Config {
     }
 
     @ConfigSection(
-            name = "hp settings",
-            description = "Settings relating to hp",
+            name = "HP Settings",
+            description = "Settings relating to HP",
             position = 1
     )
     String hp_settings = "hp_settings";
 
     @ConfigSection(
-            name = "font settings",
+            name = "Font Settings",
             description = "Settings relating to fonts",
             position = 2
     )
@@ -115,8 +115,8 @@ public interface MonsterHPConfig extends Config {
     @ConfigItem(
             position = 5,
             keyName = "npcHideFull",
-            name = "Hide hp when full",
-            description = "Hides the hp when the npc has not been damaged. Works nicely with the Show All option",
+            name = "Hide HP when full",
+            description = "Hides the HP when the npc has not been damaged. Works nicely with the Show All option",
             section = hp_settings
     )
     default boolean npcHideFull() {
@@ -130,8 +130,8 @@ public interface MonsterHPConfig extends Config {
     @ConfigItem(
             position = 6,
             keyName = "normalHPColor",
-            name = "Default hp overlay color",
-            description = "Choose the color to be used on the hp",
+            name = "Default HP overlay color",
+            description = "Choose the color to be used on the HP",
             section = hp_settings
     )
     default Color normalHPColor() {
@@ -142,7 +142,7 @@ public interface MonsterHPConfig extends Config {
             position = 7,
             keyName = "useLowHP",
             name = "Use low HP threshold",
-            description = "Configures whether or not you wish to use a 2nd color when the monster hp hits below the low hp threshold",
+            description = "Configures whether or not you wish to use a 2nd color when the monster HP hits below the low HP threshold",
             section = hp_settings
     )
     default boolean useLowHP() {
@@ -164,7 +164,7 @@ public interface MonsterHPConfig extends Config {
             position = 9,
             keyName = "lowHPColor",
             name = "Overlay color Low HP",
-            description = "Choose the color to be used when the hp of the npc is below the chosen hp threshold",
+            description = "Choose the color to be used when the HP of the npc is below the chosen HP threshold",
             section = hp_settings
     )
     default Color lowHPColor() {
@@ -175,7 +175,7 @@ public interface MonsterHPConfig extends Config {
             position = 10,
             keyName = "aboveHPBar",
             name = "Above HP bar",
-            description = "Hp above the monsters hp bar, otherwise the Hp is show on the body of the NPC",
+            description = "Hp above the monsters HP bar, otherwise the Hp is show on the body of the NPC",
             section = hp_settings
     )
     default boolean aboveHPBar() {
@@ -196,8 +196,8 @@ public interface MonsterHPConfig extends Config {
     @ConfigItem(
             position = 12,
             keyName = "hideDeath",
-            name = "Hide hp on death",
-            description = "Hides the hp when the npc dies. Works nicely with the entity hider: Hide Dead NPCs option",
+            name = "Hide HP on death",
+            description = "Hides the HP when the npc dies. Works nicely with the entity hider: Hide Dead NPCs option",
             section = hp_settings
     )
     default boolean hideDeath() {
@@ -245,7 +245,7 @@ public interface MonsterHPConfig extends Config {
             position = 16,
             keyName = "fontName",
             name = "Font",
-            description = "Name of the font to use for the hp shown. Leave blank to use RuneLite setting.",
+            description = "Name of the font to use for the HP shown. Leave blank to use RuneLite setting.",
             section = font_settings
     )
     default String fontName() {
@@ -256,7 +256,7 @@ public interface MonsterHPConfig extends Config {
             position = 17,
             keyName = "fontStyle",
             name = "Style",
-            description = "Style of the font to use for the hp shown. Only works with custom font.",
+            description = "Style of the font to use for the HP shown. Only works with custom font.",
             section = font_settings
     )
     default FontStyle fontStyle() {
@@ -267,7 +267,7 @@ public interface MonsterHPConfig extends Config {
             position = 18,
             keyName = "fontSize",
             name = "Size",
-            description = "Size of the font to use for hp text. Only works with custom font.",
+            description = "Size of the font to use for HP text. Only works with custom font.",
             section = font_settings
     )
     default int fontSize() {
@@ -371,5 +371,17 @@ public interface MonsterHPConfig extends Config {
     )
     default Color gradientHPColorB() {
         return Color.RED;
+    }
+
+    @ConfigItem(
+            keyName = "appendPercentSymbol",
+            name = "Append % symbol",
+            description = "Toggle whether to append a % symbol to the monster HP display",
+            position = 27,
+            section = hp_settings
+    )
+    default boolean appendPercentSymbol()
+    {
+        return false;
     }
 }
