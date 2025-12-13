@@ -153,6 +153,9 @@ public class MonsterHPOverlay extends Overlay {
         }
 
         String currentHPString = getCurrentHpString(wnpc);
+        if (config.appendPercentSymbol()) {
+            currentHPString += "%";
+        }
 
         if (config.stackHp()) {
             /*
