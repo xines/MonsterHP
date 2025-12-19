@@ -403,7 +403,7 @@ public class MonsterHPPlugin extends Plugin {
     public static NpcRule getNpcRule(String npcRaw) {
         String[] parts = npcRaw.split(":");
 
-        // Name should always be first part index ex: 'Guard:n:10'.
+        // Name should always be first part index e.g., 'Guard' from: 'Guard:n:10'.
         String name = (parts.length > 0 && !parts[0].isEmpty()) ? parts[0] : "";
         boolean numeric = false;
         Integer threshold = null;
